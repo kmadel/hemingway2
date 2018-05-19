@@ -32,6 +32,11 @@
           <p class="menu-label">
               Series
           </p>
+          <ul class="menu-list">
+            {{ range $name, $items := .Site.Taxonomies.series }}
+            <li><a href="{{ $.Site.BaseURL }}series/{{ $name | urlize | lower }}" class="text-uppercase">{{ $name }} ({{ len $items }})</li>
+            {{  end }}
+          </ul>
         </aside>
       </div>
     </div>
