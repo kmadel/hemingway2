@@ -1,11 +1,10 @@
 <body>
   {{ partial "header" . }}
   {{ partial "nav" . }}
-  {{ partial "series" . }}
   <section class="section">
     <div class="container">
       <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
-      {{ if .Params.series }}<h2 class="subtitle">{{index .Params.series 0}} {{ if .Params.part }} Part {{.Params.part}}{{ end }}</h2>{{ end }}
+      {{ if .Params.series }}<h2 class="subtitle">{{$series := index .Params.series 0}}<a href="{{ "series/" | relURL }}{{ . | urlize }}">{{ . }}</a> {{ if .Params.part }} Part {{.Params.part}}{{ end }}</h2>{{ end }}
       <h1 class="title">{{ .Title }}{{ if .Draft }} ::Draft{{ end }}</h1>
       {{ if .Params.tags }}
       {{ partial "tags" .Params.tags }}
