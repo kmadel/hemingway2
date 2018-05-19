@@ -1,9 +1,10 @@
 {{ partial "header" . }}
+{{ partial "nav" . }}
 
 <div class='container list-container'>
   <ul class='list'>
     {{ range .Data.Pages.ByDate }}
-      {{ .Render "li" }}
+      <li class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</li>
     {{ end }}
   </ul>
 </div>
