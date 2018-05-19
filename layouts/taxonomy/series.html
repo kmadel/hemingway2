@@ -3,7 +3,7 @@
   {{ partial "nav" . }}
   <section class="section">
     <div class="container">
-      <h1>{{ .Title }}</h1>
+      <h1 class="title">{{ .Title }}</h1>
       {{ range .Data.Pages.ByDate }}
       <article>
         <h3 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h3>
