@@ -3,7 +3,6 @@
     <nav class="nav">
       <div class="nav-left">
         <a class="nav-item" href="{{ .Site.BaseURL }}/"><h1 class="title is-4">{{ .Site.Title }}</h1></a>
-        <h2 class="subtitle">{{ .Site.Params.Subtitle }}</h2>
       </div>
       <div class="nav-right">
         <nav class="nav-item level is-mobile">
@@ -15,6 +14,7 @@
           </a>
           {{ end }}
         </nav>
+        <h2 class="subtitle">{{ .Site.Params.Subtitle }}</h2>
       </div>
     </nav>
   </div>
