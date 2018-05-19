@@ -6,8 +6,8 @@
       <h1 class="title">{{ .Title }}</h1>
       {{ range .Data.Pages.ByDate }}
       <article>
-        {{ if .Params.series }}<h2 class="subtitle">{{ if .Params.part }} Part {{.Params.part}}{{ end }}<span class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</span></h2>{{ end }}
-        <h3 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h3>
+        <h2 class="subtitle is-6">{ .Date.Format "January 2, 2006" }}</h2>
+        <h3 class="title">{{ if .Params.part }}<span class="subtitle">Part {{.Params.part}}: </span>{{ end }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h3>
       </article>
       {{ end }}
     </div>
