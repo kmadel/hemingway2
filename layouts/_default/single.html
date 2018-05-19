@@ -19,7 +19,7 @@
   <aside>
     <ul id="series">
       {{ range . }}
-        <li><a href="{{ "series" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+        <li><a href="{{ "series/" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
       {{ end }}
     </ul>
   </aside>
