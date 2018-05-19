@@ -1,12 +1,32 @@
-{{ partial "header" . }}
-{{ partial "nav" . }}
-
-<div class='container list-container'>
-  <ul class='list'>
-    {{ range .Data.Pages.ByDate }}
-      <li class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</li>
-    {{ end }}
-  </ul>
-</div>
-
-{{ partial "footer" . }}
+<body>
+  {{ partial "header" . }}
+  {{ partial "nav" . }}
+  <section class="section">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+      {{ range .Data.Pages.ByDate }}
+      <article>
+        <h3 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h3>
+        {{ if .Params.series }}<h2 class="subtitle">{{index .Params.series 0}} {{ if .Params.part }} Part {{.Params.part}}{{ end }}</h2>{{ end }}
+        <h2 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h2>
+        {{ if .Params.tags }}
+        {{ partial "tags" .Params.tags }}
+        {{ end }}
+        <div class="content">
+          {{ .Summary | plainify | safeHTML }}
+          {{ if .Truncated }}
+          ...<a class="button is-link" href="{{ .Permalink }}" style="height:28px">
+            Read more
+            <span class="icon is-small">
+              <i class="fa fa-angle-double-right"></i>
+            </span>
+          </a>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ partial "pager" . }}
+  {{ partial "footer" . }}
+</body>
