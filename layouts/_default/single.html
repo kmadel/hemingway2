@@ -14,24 +14,23 @@
       </div>
     </div>
   </section>
-{{ $series := or (.Get 0) $.Page.Params.series }}
-<div class="well">
-  <h4>Article Series</h4>
-  <ol>
-    {{ range $ind,$art := $.Site.Pages.ByDate }}
-      {{ if eq $art.Params.series $series }}
-        <li>
-          {{ if eq $art.Permalink $.Page.Permalink}}
-            {{ $art.Params.title }}
-          {{ else }}
-            <a href="{{ $art.Permalink }}">{{ $art.Params.title }}</a>
-          {{ end }}
-        </li>
+  {{ $series := or (.Get 0) $.Page.Params.series }}
+  <div class="well">
+    <h4>Article Series</h4>
+    <ol>
+      {{ range $ind,$art := $.Site.Pages.ByDate }}
+        {{ if eq $art.Params.series $series }}
+          <li>
+            {{ if eq $art.Permalink $.Page.Permalink}}
+              {{ $art.Params.title }}
+            {{ else }}
+              <a href="{{ $art.Permalink }}">{{ $art.Params.title }}</a>
+            {{ end }}
+          </li>
+        {{ end }}
       {{ end }}
-    {{ end }}
-  </ol>
-</div>
-  {{ end }}
+    </ol>
+  </div>
   {{ partial "disqus" . }}
   {{ partial "footer" . }}
 </body>
