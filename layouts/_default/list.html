@@ -2,28 +2,37 @@
   {{ partial "header" . }}
   {{ partial "nav" . }}
   <section class="section">
-    <div class="container">
-      {{ range sort .Paginator.Pages }}
-      <article>
-        <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
-        {{ if .Params.series }}<h2 class="subtitle"><a href="{{ "series/" | relURL }}{{ index .Params.series 0 | urlize }}">{{ index .Params.series 0 }}</a> {{ if .Params.part }} Part {{.Params.part}}{{ end }}</h2>{{ end }}
-        <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
-        {{ if .Params.tags }}
-        {{ partial "tags" .Params.tags }}
-        {{ end }}
-        <div class="content">
-          {{ .Summary | plainify | safeHTML }}
-          {{ if .Truncated }}
-          ...<a class="button is-link" href="{{ .Permalink }}" style="height:28px">
-            Read more
-            <span class="icon is-small">
-              <i class="fa fa-angle-double-right"></i>
-            </span>
-          </a>
+    <div class="container columns">
+      <div class="column is-three-quarters">
+        {{ range sort .Paginator.Pages }}
+        <article>
+          <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
+          {{ if .Params.series }}<h2 class="subtitle"><a href="{{ "series/" | relURL }}{{ index .Params.series 0 | urlize }}">{{ index .Params.series 0 }}</a> {{ if .Params.part }} Part {{.Params.part}}{{ end }}</h2>{{ end }}
+          <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
+          {{ if .Params.tags }}
+          {{ partial "tags" .Params.tags }}
           {{ end }}
-        </div>
-      </article>
-      {{ end }}
+          <div class="content">
+            {{ .Summary | plainify | safeHTML }}
+            {{ if .Truncated }}
+            ...<a class="button is-link" href="{{ .Permalink }}" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            {{ end }}
+          </div>
+        </article>
+        {{ end }}
+      </div>
+      <div class="column">
+        <aside class="menu">
+          <p class="menu-label">
+              Series
+          </p>
+        </aside>
+      </div>
     </div>
   </section>
   {{ partial "pager" . }}

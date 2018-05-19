@@ -1,6 +1,6 @@
   {{ $series := $.Page.Params.series }}
   <div class="well">
-    <h4>Article Series</h4>
+    <h4>Series</h4>
     <ol>
       {{ range $ind,$art := $.Site.Pages.ByDate }}
         {{ if eq $art.Params.series $series }}
