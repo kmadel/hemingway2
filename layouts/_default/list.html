@@ -34,7 +34,7 @@
           </p>
           <ul class="menu-list">
             {{ range $name, $items := .Site.Taxonomies.series }}
-            <li><a href="{{ $.Site.BaseURL }}series/{{ $name | urlize | lower }}" class="text-uppercase">{{ $name }} ({{ len $items }})</li>
+            <li><a href="{{ $.Site.BaseURL }}series/{{ $name | urlize | lower }}" class="is-uppercase">{{ $name }} ({{ len $items }})</li>
             {{  end }}
           </ul>
         </aside>
