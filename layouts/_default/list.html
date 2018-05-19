@@ -3,7 +3,7 @@
   {{ partial "nav" . }}
   <section class="section">
     <div class="container columns">
-      <div class="column is-three-quarters is-10">
+      <div class="column is-three-quarters">
         {{ range sort .Paginator.Pages }}
         <article>
           <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
