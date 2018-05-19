@@ -4,7 +4,7 @@
   <section class="section">
     <div class="container">
       <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
-      {{ if .Params.series }}<h2 class="subtitle"><a href="{{ "series/" | relURL }}{{ index .Params.series 0 | urlize }}">{{ . }}</a> {{ if .Params.part }} Part {{.Params.part}}{{ end }}</h2>{{ end }}
+      {{ if .Params.series }}<h2 class="subtitle"><a href="{{ "series/" | index .Params.series 0 }}{{ index .Params.series 0 | urlize }}">{{ . }}</a> {{ if .Params.part }} Part {{.Params.part}}{{ end }}</h2>{{ end }}
       <h1 class="title">{{ .Title }}{{ if .Draft }} ::Draft{{ end }}</h1>
       {{ if .Params.tags }}
       {{ partial "tags" .Params.tags }}
