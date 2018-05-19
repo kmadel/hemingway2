@@ -3,7 +3,7 @@
   {{ partial "nav" . }}
   <section class="section">
     <div class="container columns">
-      <div class="column is-three-quarters">
+      <div class="column is-three-quarters is-10">
         {{ range sort .Paginator.Pages }}
         <article>
           <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
@@ -25,6 +25,7 @@
           </div>
         </article>
         {{ end }}
+        {{ partial "pager" . }}
       </div>
       <div class="column">
         <aside class="menu">
@@ -35,6 +36,5 @@
       </div>
     </div>
   </section>
-  {{ partial "pager" . }}
   {{ partial "footer" . }}
 </body>
