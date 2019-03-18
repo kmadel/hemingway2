@@ -4,7 +4,7 @@
   <section class="section">
     <div class="container">
       <h1 class="title">{{ .Title }}</h1>
-      <div class="content">{{ if .Params.photo }}<figure class="series-photo"><img src="{{ .Params.photo }}" /><figcaption>{{ .Params.photoCaption }}</figcaption></figure>{{ end }}{{ .Description }}</div>
+      <div class="content">{{ if .Params.photo }}<figure class="series-photo"><img src="{{ .Params.photo }}" /><figcaption>{{ .Params.photoCaption | safeHTML }}</figcaption></figure>{{ end }}{{ .Description }}</div>
       {{ range .Data.Pages.ByDate }}
       <article>
         <h3 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h3>
