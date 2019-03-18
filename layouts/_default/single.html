@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 <body>
   {{ partial "nav" . }}
-  <section class="section">
+  <section class="section single">
     <div class="container">
       <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
       {{ if .Params.series }}<h2 class="subtitle"><a href="{{ "series/" | relURL }}{{ index .Params.series 0 | urlize }}">{{ index .Params.series 0 }}</a> {{ if .Params.part }} Part {{.Params.part}}{{ end }}</h2>{{ end }}
