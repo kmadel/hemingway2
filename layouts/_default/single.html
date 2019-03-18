@@ -9,6 +9,7 @@
       {{ if .Params.tags }}
       {{ if .Params.photo }}<figure class="series-photo"><img src="{{ .Params.photo }}" /><figcaption>{{ .Params.photoCaption | safeHTML }}</figcaption></figure>{{ end }}
       {{ partial "tags" .Params.tags }}
+      {{< figure src=".Params.photo" caption="This is a caption">}}
       {{ end }}
       <div class="content">
         {{- with .Content -}}
