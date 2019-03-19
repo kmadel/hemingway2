@@ -1,0 +1,5 @@
+{{ $data := index .Site.Data .Page.Params.dataFile }}
+<dl class="exif">
+    <dt>Make and Model</dt><dd>{{ $data.Make }} {{ $data.Model }}</dd>
+    <dt>Exposure</dt><dd>{{ $data.ExposureTime }}</dd>
+</dl>
