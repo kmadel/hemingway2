@@ -13,6 +13,7 @@
             <img itemprop="thumbnail" src="{{ .Params.photo }}" alt="{{ .Params.photoCaption | safeHTML }}">
           </div>
           <a href="{{ .Params.photo }}" itemprop="contentUrl"></a>
+          <figcaption>{{ .Params.photoCaption | safeHTML }}</figcaption>
         </figure>
       </div>
       {{ end }}
