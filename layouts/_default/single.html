@@ -10,7 +10,7 @@
       <div class="box">
         <figure class="series-photo" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">
           <div class="img">
-            <img itemprop="thumbnail" src="{{ .Params.photo }}" alt="{{ .Params.photoExif }}">
+            <img itemprop="thumbnail" src="{{ .Params.photo }}" alt="{{ exif }}">
           </div>
           <a href="{{ .Params.photo }}" itemprop="contentUrl"></a>
           <figcaption>{{ .Params.photoCaption | safeHTML }}</figcaption>
