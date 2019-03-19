@@ -11,7 +11,7 @@
       <div class="box">
         <figure class="series-photo" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">
           <div class="img">
-            <img itemprop="thumbnail" src="{{ .Params.photo }}" alt="{{ $data.first.ExposureTime }}">
+            <img itemprop="thumbnail" src="{{ .Params.photo }}" alt="{{ $data.ExposureTime }}">
           </div>
           <a href="{{ .Params.photo }}" itemprop="contentUrl"></a>
           <figcaption>{{ .Params.photoCaption | safeHTML }}</figcaption>
